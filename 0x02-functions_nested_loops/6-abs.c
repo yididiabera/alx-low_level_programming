@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-*_abs(int) - absolute value of an integer
+*_abs - absolute value of an integer
 *@n: is the number to be checked
 *Return: void
 */

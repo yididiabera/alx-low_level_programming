@@ -6,8 +6,8 @@
  * Return: 0
  */
 int main(void)
-int a, b, c;
 {
+int a, b, c;
 for (a = 0; a < 10; a++)
 {
 for (int b = 0; b < 10; b++)

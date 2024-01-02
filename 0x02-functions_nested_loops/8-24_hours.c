@@ -2,7 +2,6 @@
 
 /**
 *jack_bauer - print every minute
-*@n: is the number to be checked
 *Return: Always 0
 */
 

@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  *_strcat - conctenates two strings
  *
@@ -8,6 +9,7 @@
  *Return:char
  *
  */
+
 char *_strcat(char *dest, char *src)
 {
 int i, j;

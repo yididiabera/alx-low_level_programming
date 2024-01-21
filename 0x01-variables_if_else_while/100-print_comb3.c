@@ -4,25 +4,29 @@
  * main - Entry point
  * Return: Always 0 (Success)
  */
+
 int main(void)
 {
-int a, b;
-for (a = 0; a < 10; a++)
-{
-for (b = 0; b < 10; b++)
-{
-if (a != b && a < b)
-{
-	putchar('0' + a);
-	putchar('0' + b);
-if (b + a != 17)
-{
-	putchar(',');
-	putchar(' ');
-}
-}
-}
-}
-putchar('\n');
-return (0);
+    int x;
+    int y;
+
+    for (x = 48; x <= 57; x++)
+    {
+        for (y = 48; y <= 57; y++)
+        {
+            if (x != y && x < y)
+            {
+                putchar(x);
+                putchar(y);
+
+                if ((x +y) != 113)
+                {
+                    putchar(',');
+                    putchar(' ');
+                }
+            }
+        }
+    }
+    putchar('\n');
+    return(0);
 }

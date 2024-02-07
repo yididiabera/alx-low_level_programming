@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- *listint_len - returns the no. of elements in a linked list
+ *listint_len - returns the number of elements in a linked list
  *@h:pointer to a listint struct
- *Return:no. of elements
+ *Return:number of elements
  */
 
 size_t listint_len(const listint_t *h)

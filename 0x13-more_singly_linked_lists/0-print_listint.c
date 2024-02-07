@@ -3,8 +3,8 @@
 #include <stdlib.h>
 /**
  *print_listint - prints all elements of a print_listint list
- *@h:pointer to a listint struct
- *Return:no. of nodes
+ *@h:pointer to a listint structure
+ *Return:number of nodes
  */
 size_t print_listint(const listint_t *h)
 {

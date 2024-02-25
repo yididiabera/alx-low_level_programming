@@ -34,7 +34,6 @@ void times_table(void)
 					_putchar(prod + '0');
 				}
 			}
-			
 			if (j != 9)
 			{
 				_putchar(',');

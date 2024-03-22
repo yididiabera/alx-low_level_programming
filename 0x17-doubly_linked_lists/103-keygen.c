@@ -13,40 +13,40 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	char locker[7], *codex;
 
-	int len = strlen(argv[1]), i, tmp;
+	int length = strlen(argv[1]), x, y;
 
 	codex = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
 
-	tmp = (len ^ 59) & 63;
-	locker[0] = codex[tmp];
+	y = (length ^ 59) & 63;
+	locker[0] = codex[y];
 
-	tmp = 0;
-	for (i = 0; i < len; i++)
-		tmp += argv[1][i];
-	locker[1] = codex[(tmp ^ 79) & 63];
+	y = 0;
+	for (x = 0; x < length; x++)
+		y += argv[1][x];
+	locker[1] = codex[(y ^ 79) & 63];
 
-	tmp = 1;
-	for (i = 0; i < len; i++)
-		tmp *= argv[1][i];
-	locker[2] = codex[(tmp ^ 85) & 63];
+	y = 1;
+	for (x = 0; x < length; x++)
+		y *= argv[1][x];
+	locker[2] = codex[(y ^ 85) & 63];
 
-	tmp = 0;
-	for (i = 0; i < len; i++)
+	y = 0;
+	for (x = 0; x < length; x++)
 	{
-		if (argv[1][i] > tmp)
-			tmp = argv[1][i];
+		if (argv[1][x] > y)
+			y = argv[1][x];
 	}
-	srand(tmp ^ 14);
+	srand(y ^ 14);
 	locker[3] = codex[rand() & 63];
 
-	tmp = 0;
-	for (i = 0; i < len; i++)
-		tmp += (argv[1][i] * argv[1][i]);
-	locker[4] = codex[(tmp ^ 239) & 63];
+	y = 0;
+	for (x = 0; x < length; x++)
+		y += (argv[1][x] * argv[1][x]);
+	locker[4] = codex[(y ^ 239) & 63];
 
-	for (i = 0; i < argv[1][0]; i++)
-		tmp = rand();
-	locker[5] = codex[(tmp ^ 229) & 63];
+	for (x = 0; x < argv[1][0]; x++)
+		y = rand();
+	locker[5] = codex[(y ^ 229) & 63];
 
 	locker[6] = '\0';
 	printf("%s", locker);

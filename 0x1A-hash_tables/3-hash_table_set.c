@@ -1,10 +1,10 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - adds an element to hash table
+ * hash_table_set - addition of elements to the hash table
  * @ht: hash table
- * @key: key
- * @value: value
+ * @key: the key
+ * @value: the value
  * Return: 1 or 0
  */
 

@@ -4,8 +4,7 @@
 #include "hash_tables.h"
 
 /**
- * main - check the code for
- *
+ * main - checking
  * Return: Always EXIT_SUCCESS.
  */
 int main(void)

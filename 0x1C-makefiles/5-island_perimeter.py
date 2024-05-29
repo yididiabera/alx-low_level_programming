@@ -1,30 +1,34 @@
 #!/usr/bin/python3
-"""Define island perimeter measuring fun"""
+"""A module for finding Island perimeter."""
 
 
 def island_perimeter(grid):
-    """Calculate the perimeter of the island
-
-    Args:
-        grid (2D list): a list of list of integers
-
-    Returns:
-        the perimeter
-    """
-    edges = 0
-    size = 0
+    """A function for finding Island perimeter"""
+    no_island = True
     for i in range(len(grid)):
-        for j in range(len(grid[i])):
+        if 1 in grid[i]:
+            no_island = False
+    if no_island:
+        return 0
+    visit = set()
+
+    def depth_first_search(i, j):
+        """A function for performing dfs on the grid"""
+        if (
+            i >= len(grid) or j >= len(grid[0]) or
+            i < 0 or j < 0 or grid[i][j] == 0
+        ):
+            return 1
+        if (i, j) in visit:
+            return 0
+        visit.add((i, j))
+        perimeter = depth_first_search(i, j)
+        perimeter += depth_first_search(i, j+1)
+        perimeter += depth_first_search(i, j-1)
+        perimeter += depth_first_search(i+1, j)
+        perimeter += depth_first_search(i-1, j)
+        return perimeter
+    for i in range(len(grid)):
+        for j in range(len(grid[0])):
             if grid[i][j] == 1:
-                size += 1
-                if j > 0 and grid[i][j - 1] == 1:
-                    edges += 1
-                if i > 0 and grid[i - 1][j] == 1:
-                    edges+=1
-    perimeter = size * 4 - edges * 2           
-    return perimeter
-
-
-
-
-    
+                return depth_first_search(i, j)

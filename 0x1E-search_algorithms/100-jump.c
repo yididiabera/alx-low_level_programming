@@ -1,18 +1,18 @@
 #include "search_algos.h"
 
 /**
-  * jump_search - Searches for a value in a sorted array
-  *               of integers using jump search.
-  * @array: A pointer to the first element of the array to search.
-  * @size: The number of elements in the array.
-  * @value: The value to search for.
-  *
-  * Return: If the value is not present or the array is NULL, -1.
-  *         else, the first index where the value is located.
-  *
-  * Description: Prints a value every time it is compared in the array.
-  *              Uses the square root of the array size as the jump step.
-  */
+ * jump_search - Performs a jump search on a sorted array of integers.
+ * @array: Pointer to the first element of the array to be searched.
+ * @size: The total number of elements in the array.
+ * @value: The target value to find in the array.
+ *
+ * Return: Returns -1 if the value is not found or if the array is NULL.
+ *         Otherwise, returns the index of the first occurrence of the value.
+ *
+ * Description: Outputs each value as it is compared in the array.
+ *              The jump interval is the square root of the array's size.
+ */
+
 int jump_search(int *array, size_t size, int value)
 {
 	size_t i, jump, step;

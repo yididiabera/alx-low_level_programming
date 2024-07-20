@@ -1,17 +1,17 @@
 #include "search_algos.h"
 
 /**
- * linear_skip - Searches for an algorithm in a sorted singly
- *               linked list of integers using linear skip.
- * @list: A pointer to the  head of the linked list to search.
- * @value: The value to search for.
+ * linear_skip - Searches for a value in a sorted singly linked list of integers using linear skip.
+ * @list: Pointer to the head of the linked list to be searched.
+ * @value: The target value to find in the list.
  *
- * Return: If the value is not present or the head of the list is NULL, NULL.
- *         else, a pointer to the first node where the value is located.
+ * Return: Returns NULL if the value is not found or if the head of the list is NULL.
+ *         Otherwise, returns a pointer to the first node where the value is located.
  *
- * Description: Prints a value every time it is compared in the list.
- *              Uses the square root of the list size as the jump step.
+ * Description: Outputs each value as it is compared in the list.
+ *              The jump interval is the square root of the list size.
  */
+
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
 	skiplist_t *node, *jump;

@@ -1,27 +1,27 @@
 #include "hash_tables.h"
 
-/**
- * hash_table_create - hash table creation
- * @size: arr size
- * Return: ptr to new hash table or NULL
- */
-
-hash_table_t *hash_table_create(unsigned long int size)
+hash_table_t *hash_table_create(unsigned long int size);
 {
-	hash_table_t *new = NULL;
-	unsigned long int i;
+    hash_table_t *new_table;
+    unsigned long int i;
 
-	new = malloc(sizeof(hash_table_t));
-	if (new == NULL)
-		return (NULL);
-	new->size = size;
-	new->array = malloc(size * sizeof(hash_node_t *));
-	if (new->array == NULL)
-	{
-		free(new);
-		return (NULL);
-	}
-	for (i = 0; i < size; i++)
-		new->array[i] = NULL;
-	return (new);
+    // allocate memory for the hash table
+    new_table = malloc(sizeof(hash_table_t));
+    if (new_table == NULL)
+        return NULL;
+
+    // allocate memory for the array of buckets
+    new_table->array = malloc(size * sizeof(hash_node_t *));
+    if (new_table->array == NULL)
+    {
+        free(new_table);
+        return NULL;
+    }
+
+    for (i = 0; i < size; i++)
+        new_table->array[i] = NULL;
+
+    new_table->size = size;
+
+    return new_table;
 }
